@@ -1,0 +1,11 @@
+# This file represents where you would place your actual PNG image
+# To replace this with a real PNG image:
+# 1. Delete this file
+# 2. Copy your PNG image to this location: /public/sample-screenshot.png
+# 3. The image will automatically be available in your documentation
+
+# Image specifications for this example:
+# - Filename: sample-screenshot.png
+# - Recommended size: 400x200 pixels (or any size that fits your content)
+# - Format: PNG (supports transparency)
+# - Location: /public/ directory (accessible at /sample-screenshot.png)

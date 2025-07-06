@@ -20,6 +20,131 @@ Get started with KliveIDE in just a few steps:
 3. **Build and Run** - Compile and execute your code
 4. **Debug** - Use the integrated debugging tools
 
+## Screenshots and Images
+
+Here are some examples of how to include images in your documentation:
+
+### Basic Image Example
+![Sample KliveIDE Interface](/sample-image.svg)
+
+### Image with Custom Styling
+<img src="/sample-image.svg" alt="KliveIDE Interface" width="300" height="150" style={{ border: '1px solid #e5e7eb', borderRadius: '8px', marginTop: '16px' }} />
+
+### Responsive Image
+<div style={{ textAlign: 'center', margin: '20px 0' }}>
+  <img 
+    src="/sample-image.svg" 
+    alt="KliveIDE Screenshot" 
+    style={{ 
+      maxWidth: '100%', 
+      height: 'auto',
+      border: '2px solid #3b82f6',
+      borderRadius: '12px',
+      boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.1)'
+    }} 
+  />
+  <p style={{ fontSize: '14px', color: '#6b7280', marginTop: '8px' }}>
+    <em>Figure 1: KliveIDE main interface</em>
+  </p>
+</div>
+
+### Different Image Usage Methods
+
+1. **Markdown syntax** (simple):
+   ```markdown
+   ![Alt text](/path/to/image.png)
+   ```
+
+2. **HTML img tag** (more control):
+   ```html
+   <img src="/path/to/image.png" alt="Description" width="400" />
+   ```
+
+3. **With styling** (custom appearance):
+   ```html
+   <img src="/image.png" alt="Description" style={{ borderRadius: '8px' }} />
+   ```
+
+4. **Clickable image** (opens in new tab at full size):
+   ```html
+   <a href="/image.png" target="_blank" rel="noopener noreferrer">
+     <img src="/image.png" alt="Description" style={{ cursor: 'pointer' }} />
+   </a>
+   ```
+
+### Clickable Image Example
+
+Click the image below to open it in a new tab at full size:
+
+import { ClickableImage } from '../components'
+
+<ClickableImage 
+  src="/sample-image.svg"
+  alt="Click to enlarge - KliveIDE Interface"
+  caption="💡 Click the image above to view it in full size in a new tab"
+  borderColor="green"
+  hoverScale={1.02}
+  fadeIn={true}
+/>
+
+### React Component Usage
+
+You can now use the improved `ClickableImage` component with SCSS styling:
+
+```tsx
+import { ClickableImage } from '../components'
+
+// Basic usage with predefined colors
+<ClickableImage 
+  src="/your-image.png"
+  alt="Description"
+  caption="Your caption here"
+  borderColor="blue"
+/>
+
+// With custom styling and animations
+<ClickableImage 
+  src="/your-image.png"
+  alt="Description"
+  caption="Custom styled image"
+  borderColor="purple"
+  hoverScale={1.05}
+  width={400}
+  fadeIn={true}
+/>
+
+// With custom hex color
+<ClickableImage 
+  src="/your-image.png"
+  alt="Description"
+  caption="Custom border color"
+  borderColor="#ff6b6b"
+  hoverScale={1.03}
+/>
+```
+
+### More Component Examples
+
+<ClickableImage 
+  src="/sample-image.svg"
+  alt="Blue themed image"
+  caption="Example with blue border theme"
+  borderColor="blue"
+  hoverScale={1.03}
+  width={350}
+  fadeIn={true}
+/>
+
+<ClickableImage 
+  src="/sample-image.svg"
+  alt="Purple themed image"
+  caption="Example with purple border and larger hover effect"
+  borderColor="purple"
+  hoverScale={1.08}
+  width={300}
+  fadeIn={true}
+/>
+
 ## Featured Sections
 
 import { Cards, Card } from 'nextra/components'

@@ -2,7 +2,12 @@ import React from 'react'
 import { DocsThemeConfig } from 'nextra-theme-docs'
 
 const config: DocsThemeConfig = {
-  logo: <span>KliveIDE Documentation</span>,
+  logo: (
+    <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+      <img src="/logo.svg" alt="KliveIDE" height="32" />
+      <span style={{marginLeft: 12, fontWeight: "bold", fontSize: "2em"}}>Klive IDE</span>
+    </div>
+  ),
   project: {
     link: 'https://github.com/dotneteer/klive',
   },
