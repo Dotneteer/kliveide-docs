@@ -17,46 +17,11 @@
   
   // Default styling
   &.default {
-    border: 2px solid #10b981;
-    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+    box-shadow: 0 8px 20px -2px rgb(0 0 0 / 0.3);
   }
-  
-  // Hover state
-  &.hovered {
-    box-shadow: 0 8px 15px -3px rgb(0 0 0 / 0.2);
-  }
-  
-  // Custom border colors
-  &.borderGreen {
-    border: 2px solid #10b981;
-  }
-  
-  &.borderBlue {
-    border: 2px solid #3b82f6;
-  }
-  
-  &.borderPurple {
-    border: 2px solid #8b5cf6;
-  }
-  
-  &.borderRed {
-    border: 2px solid #ef4444;
-  }
-  
-  &.borderGray {
-    border: 2px solid #6b7280;
-  }
-}
 
-.caption {
-  font-size: 14px;
-  color: #6b7280;
-  margin-top: 8px;
-  font-style: italic;
-  
-  // Dark mode support
-  @media (prefers-color-scheme: dark) {
-    color: #9ca3af;
+  &:hover {
+    box-shadow: 0 14px 32px -5px rgb(0 0 0 / 0.5);
   }
 }
 
@@ -69,25 +34,4 @@
   .image {
     border-radius: 8px;
   }
-  
-  .caption {
-    font-size: 12px;
-    margin-top: 6px;
-  }
-}
-
-// Animation utilities
-@keyframes scaleIn {
-  from {
-    transform: scale(0.95);
-    opacity: 0;
-  }
-  to {
-    transform: scale(1);
-    opacity: 1;
-  }
-}
-
-.fadeIn {
-  animation: scaleIn 0.3s ease-out;
 }

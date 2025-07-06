@@ -9,7 +9,7 @@ const config: DocsThemeConfig = {
     </div>
   ),
   project: {
-    link: 'https://github.com/dotneteer/klive',
+    link: 'https://github.com/Dotneteer/kliveide',
   },
   docsRepositoryBase: 'https://github.com/dotneteer/klive',
   footer: {
@@ -40,18 +40,17 @@ const config: DocsThemeConfig = {
   toc: {
     backToTop: true
   },
-  editLink: {
-    text: 'Edit this page on GitHub →'
-  },
-  feedback: {
-    content: 'Question? Give us feedback →',
-    labels: 'feedback'
-  },
   search: {
     placeholder: 'Search documentation...'
   },
   primaryHue: 200,
   primarySaturation: 100,
+  editLink: {
+    component: null
+  },
+  feedback: {
+    content: null
+  }
 }
 
 export default config

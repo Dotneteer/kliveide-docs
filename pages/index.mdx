@@ -1,177 +1,77 @@
-# KliveIDE Documentation
-
-Welcome to the comprehensive documentation for **KliveIDE**, a powerful integrated development environment designed for retro computing enthusiasts and Z80 assembly language developers.
-
-```z80-klive
-; Example Z80 Assembly Code
-; This is a simple program that prints "Hello, World!" to the console
-label 
-  org 0x0100          ; Set origin to 0x0100
-  ld a, 'H'          ; Load 'H' into register A
-  out (0x01), a      ; Output the character to port 0x01
-  ld a, 'e'          ; Load 'e' into register A
-```
-
-## What is KliveIDE?
-
-KliveIDE is a modern IDE that brings the classic computing experience to contemporary development workflows. It provides:
-
-- 🎯 **Z80 Assembly Development** - Full-featured assembly language support
-- 🖥️ **Retro Computer Emulation** - Built-in emulators for classic systems
-- 🔧 **Modern Tooling** - Contemporary development tools for vintage platforms
-- 📚 **Comprehensive Documentation** - Extensive guides and references
-
-## Quick Start
-
-Get started with KliveIDE in just a few steps:
-
-1. **Installation** - Download and install KliveIDE for your platform
-2. **First Project** - Create your first Z80 assembly project
-3. **Build and Run** - Compile and execute your code
-4. **Debug** - Use the integrated debugging tools
-
-## Screenshots and Images
-
-Here are some examples of how to include images in your documentation:
-
-### Basic Image Example
-![Sample KliveIDE Interface](/sample-image.svg)
-
-### Image with Custom Styling
-<img src="/sample-image.svg" alt="KliveIDE Interface" width="300" height="150" style={{ border: '1px solid #e5e7eb', borderRadius: '8px', marginTop: '16px' }} />
-
-### Responsive Image
-<div style={{ textAlign: 'center', margin: '20px 0' }}>
-  <img 
-    src="/sample-image.svg" 
-    alt="KliveIDE Screenshot" 
-    style={{ 
-      maxWidth: '100%', 
-      height: 'auto',
-      border: '2px solid #3b82f6',
-      borderRadius: '12px',
-      boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.1)'
-    }} 
-  />
-  <p style={{ fontSize: '14px', color: '#6b7280', marginTop: '8px' }}>
-    <em>Figure 1: KliveIDE main interface</em>
-  </p>
-</div>
-
-### Different Image Usage Methods
-
-1. **Markdown syntax** (simple):
-   ```markdown
-   ![Alt text](/path/to/image.png)
-   ```
-
-2. **HTML img tag** (more control):
-   ```html
-   <img src="/path/to/image.png" alt="Description" width="400" />
-   ```
-
-3. **With styling** (custom appearance):
-   ```html
-   <img src="/image.png" alt="Description" style={{ borderRadius: '8px' }} />
-   ```
-
-4. **Clickable image** (opens in new tab at full size):
-   ```html
-   <a href="/image.png" target="_blank" rel="noopener noreferrer">
-     <img src="/image.png" alt="Description" style={{ cursor: 'pointer' }} />
-   </a>
-   ```
-
-### Clickable Image Example
-
-Click the image below to open it in a new tab at full size:
-
 import { ClickableImage } from '../components'
 
-<ClickableImage 
-  src="/sample-image.svg"
-  alt="Click to enlarge - KliveIDE Interface"
-  caption="💡 Click the image above to view it in full size in a new tab"
-  borderColor="green"
-  hoverScale={1.02}
-  fadeIn={true}
-/>
+# Introduction to Klive IDE
 
-### React Component Usage
+**Klive IDE is a retro computer emulator and Integrated Development Environment running on Mac and Windows.**
 
-You can now use the improved `ClickableImage` component with SCSS styling:
+Klive offers not only the emulators but also debugging views, a multi-pane code editor, interactive commands, and other tools to create your Z80 Assembly and ZX BASIC (Boriel's Basic) programs.
 
-```tsx
-import { ClickableImage } from '../components'
+Klive IDE supports dual monitor mode to place the Emulator and IDE on different monitors while working with code.
 
-// Basic usage with predefined colors
-<ClickableImage 
-  src="/your-image.png"
-  alt="Description"
-  caption="Your caption here"
-  borderColor="blue"
-/>
+<ClickableImage src="/images/intro/klive-ide-intro.png" alt="Intro" />
 
-// With custom styling and animations
-<ClickableImage 
-  src="/your-image.png"
-  alt="Description"
-  caption="Custom styled image"
-  borderColor="purple"
-  hoverScale={1.05}
-  width={400}
-  fadeIn={true}
-/>
+## Supported Emulators
 
-// With custom hex color
-<ClickableImage 
-  src="/your-image.png"
-  alt="Description"
-  caption="Custom border color"
-  borderColor="#ff6b6b"
-  hoverScale={1.03}
-/>
-```
+Klive IDE intends to support retro computers with the Z80 family of CPUs. Klive supports these emulators:
 
-### More Component Examples
+- **ZX Spectrum 48K**
+- **ZX Spectrum 128K**
+- **ZX Spectrum +2E/+3E**
+- **Cambridge Z88**
+- ZX Spectrum Next (*in progress*)
+- ZX 80/81 (*in the future*)
 
-<ClickableImage 
-  src="/sample-image.svg"
-  alt="Blue themed image"
-  caption="Example with blue border theme"
-  borderColor="blue"
-  hoverScale={1.03}
-  width={350}
-  fadeIn={true}
-/>
+## Emulator Features
 
-<ClickableImage 
-  src="/sample-image.svg"
-  alt="Purple themed image"
-  caption="Example with purple border and larger hover effect"
-  borderColor="purple"
-  hoverScale={1.08}
-  width={300}
-  fadeIn={true}
-/>
+The emulator can run the selected machine with or without debugging. These modes can be changed without restarting the running machine:
 
-## Featured Sections
+- Starting, pausing, continuing to run
+- Start or continue in debug mode
+- Setting up breakpoints, step-in, step-over, step-out modes
 
-import { Cards, Card } from 'nextra/components'
+To examine the state of the emulator, Klive offers several views:
 
-<Cards>
-  <Card icon="🚀" title="Getting Started" href="/getting-started" />
-  <Card icon="📖" title="User Guide" href="/user-guide" />
-  <Card icon="🔧" title="Development" href="/development" />
-  <Card icon="📚" title="API Reference" href="/api-reference" />
-</Cards>
+- Full CPU view
+- Full ULA view
+- Memory view with live refresh
+- Disassembly view with execution point tracking
+- Monitoring system variable values
+- Displaying (and exporting) the current BASIC listing
 
-## Community and Support
+You can quickly load and play programs (games) from files:
 
-- **GitHub Repository**: [github.com/dotneteer/klive](https://github.com/dotneteer/klive)
-- **Issue Tracker**: Report bugs and request features
-- **Discussions**: Join the community discussions
+- Loading tape files (`.tap` and `.tzx`)
+- Fast load
+- Loading from disk files (`.dsk`) with ZX Spectrum +3E
+- Writing and formatting disk (`.dsk`) files (*in progress*)
 
----
+Other emulator features:
 
-Ready to dive in? Start with our [Getting Started Guide](/getting-started) to begin your journey with KliveIDE!
+- Visual keyboard (ZX Spectrum 48K and ZX Spectrum 128K styles)
+- Multiplying CPU clock speed (1-24 multiplier)
+- Setting up the sound level, muting and unmuting sound
+
+Planned features (*in the future*):
+
+- Using custom machine ROMs
+- Memory read/write breakpoints
+- I/O read/write breakpoints
+- Breakpoints with hit count conditions
+
+## IDE Features
+
+The IDE allows you to open project folders that keep the files belonging to a particular (development) project together. You can use Z80 Assembly language (with the built-in Klive Z80 Assembler) and ZX BASIC (Boriel's Basic) as your programming language.
+
+- Syntax highlighting
+- Source code debugging (works with the Klive Z80 Assembler)
+- Exporting the compiled code to tape files (`.tap` and `.tzx) with BASIC loaders
+
+Klive's unique feature is the one-click start and debugging: With a click of one button, your code is compiled and injected into the selected emulator and immediately starts up. You can start your code with debugging (or pause it and continue with debugging).
+
+Commands: The IDE has an interactive command panel to issue CLI commands executed within the IDE.
+
+Planned features (*in the future*):
+
+- Watch Panel: display runtime information about memory variables (expressions)
+- Conditional breakpoints
+- Integration with other assemblers, including compilation and optional source code debugging (if the particular compiler supports debug symbol information).
