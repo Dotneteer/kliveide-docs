@@ -2,6 +2,16 @@
 
 Welcome to the comprehensive documentation for **KliveIDE**, a powerful integrated development environment designed for retro computing enthusiasts and Z80 assembly language developers.
 
+```z80-klive
+; Example Z80 Assembly Code
+; This is a simple program that prints "Hello, World!" to the console
+label 
+  org 0x0100          ; Set origin to 0x0100
+  ld a, 'H'          ; Load 'H' into register A
+  out (0x01), a      ; Output the character to port 0x01
+  ld a, 'e'          ; Load 'e' into register A
+```
+
 ## What is KliveIDE?
 
 KliveIDE is a modern IDE that brings the classic computing experience to contemporary development workflows. It provides:

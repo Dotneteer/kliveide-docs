@@ -1,0 +1,94 @@
+{
+  "name": "Z80 Assembly",
+  "scopeName": "source.z80-klive",
+  "patterns": [
+    {
+      "include": "#comments"
+    },
+    {
+      "include": "#constants"
+    },
+    {
+      "include": "#instructions"
+    },
+    {
+      "include": "#directives"
+    },
+    {
+      "include": "#pragmas"
+    },
+    {
+      "include": "#labels"
+    },
+    {
+      "include": "#functions"
+    }
+  ],
+  "repository": {
+    "comments": {
+      "patterns": [
+        {
+          "name": "comment.line.semicolon.z80-klive",
+          "match": ";.*"
+        },
+        {
+          "name": "comment.block.z80-klive",
+          "begin": "/\\*\\*",
+          "end": "\\*\\*/"
+        }
+      ]
+    },
+    "constants": {
+      "patterns": [
+        {
+          "name": "constant.numeric.z80-klive",
+          "match": "\\b([0-9a-fA-F]+[hH]|\\$[0-9a-fA-F]+|[0-1]+[bB]|%[0-1]+|[0-9]+[dD]?)\\b"
+        },
+        {
+          "name": "constant.character.z80-klive",
+          "match": "'.'"
+        }
+      ]
+    },
+    "instructions": {
+      "patterns": [
+        {
+          "name": "keyword.control.z80-klive",
+          "match": "\\b(ld|push|pop|ex|exx|in|out|ini|ind|inir|indr|outi|outd|otir|otdr|add|adc|sub|sbc|and|or|xor|cp|inc|dec|daa|cpl|neg|ccf|scf|nop|halt|di|ei|im|rla|rlca|rra|rrca|rl|rlc|rr|rrc|sla|sra|srl|rld|rrd|bit|set|res|jp|jr|djnz|call|ret|reti|retn|rst)\\b"
+        }
+      ]
+    },
+    "directives": {
+      "patterns": [
+        {
+          "name": "keyword.directive.z80-klive",
+          "match": "\\.(org|equ|db|dw|ds|byte|word|skip|end|include|define|if|endif|else|error|warning)\\b"
+        }
+      ]
+    },
+    "pragmas": {
+      "patterns": [
+        {
+          "name": "keyword.pragma.z80-klive",
+          "match": "#pragma\\s+[A-Za-z_][A-Za-z0-9_]*"
+        }
+      ]
+    },
+    "labels": {
+      "patterns": [
+        {
+          "name": "entity.name.function.z80-klive",
+          "match": "^\\s*([A-Za-z_][A-Za-z0-9_]*):"
+        }
+      ]
+    },
+    "functions": {
+      "patterns": [
+        {
+          "name": "support.function.z80-klive",
+          "match": "\\b(abs|sin|cos|tan|atan|acos|asin|pi|exp|ln|log|sqr|sqrt|sgn|int|frac|peek|peekw|peekl|usr)\\b"
+        }
+      ]
+    }
+  }
+}
