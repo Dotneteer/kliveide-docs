@@ -1,0 +1,159 @@
+# Z80 Assembly Development
+
+Master Z80 assembly programming with KliveIDE's powerful development tools.
+
+## Introduction to Z80 Assembly
+
+The Z80 processor is an 8-bit microprocessor that was widely used in home computers, game consoles, and embedded systems. KliveIDE provides comprehensive support for Z80 assembly development.
+
+## Basic Syntax
+
+### Instructions
+Z80 assembly instructions follow this general format:
+```asm
+LABEL:  MNEMONIC  OPERAND1, OPERAND2  ; Comment
+```
+
+Example:
+```asm
+START:  LD        A, 10              ; Load 10 into accumulator
+        ADD       A, 5               ; Add 5 to accumulator
+        HALT                         ; Stop execution
+```
+
+### Registers
+The Z80 has several types of registers:
+
+#### 8-bit Registers
+- **A** - Accumulator (primary register for arithmetic)
+- **B, C, D, E, H, L** - General-purpose registers
+- **I** - Interrupt vector register
+- **R** - Memory refresh register
+
+#### 16-bit Registers
+- **BC, DE, HL** - Register pairs
+- **IX, IY** - Index registers
+- **SP** - Stack pointer
+- **PC** - Program counter
+
+### Memory Addressing
+```asm
+LD A, (HL)      ; Load from memory address in HL
+LD (IX+5), A    ; Store A at IX+5
+LD HL, $8000    ; Load immediate value $8000 into HL
+```
+
+## KliveIDE Assembly Features
+
+### Syntax Highlighting
+KliveIDE provides intelligent syntax highlighting for:
+- **Instructions** - Different colors for different instruction types
+- **Registers** - Highlighted register names
+- **Comments** - Clearly marked comments
+- **Labels** - Distinctive label formatting
+- **Numbers** - Different bases (hex, decimal, binary)
+
+### IntelliSense
+Get intelligent code completion for:
+- Instruction mnemonics
+- Register names
+- Label references
+- Macro definitions
+
+### Error Detection
+Real-time error checking catches:
+- Invalid instructions
+- Incorrect operand types
+- Undefined labels
+- Syntax errors
+
+## Advanced Features
+
+### Macros
+Define reusable code blocks:
+```asm
+; Define a macro
+DELAY MACRO cycles
+    LD B, cycles
+loop:
+    DJNZ loop
+ENDM
+
+; Use the macro
+DELAY 50        ; Expands to delay code
+```
+
+### Conditional Assembly
+Use conditional directives:
+```asm
+DEBUG EQU 1
+
+IF DEBUG
+    ; Debug code here
+    CALL debug_print
+ENDIF
+```
+
+### Include Files
+Organize code across multiple files:
+```asm
+INCLUDE "constants.asm"
+INCLUDE "utilities.asm"
+```
+
+## Best Practices
+
+1. **Use meaningful labels** instead of jumping to addresses
+2. **Comment your code** thoroughly, especially complex algorithms
+3. **Organize code** into logical sections with clear headers
+4. **Use constants** instead of magic numbers
+5. **Follow naming conventions** for consistency
+
+## Code Examples
+
+### Hello World
+```asm
+; Simple "Hello World" program
+        ORG $8000
+
+START:  LD HL, message
+        CALL print_string
+        HALT
+
+message: DB "Hello, World!", 0
+
+print_string:
+        LD A, (HL)
+        OR A
+        RET Z
+        CALL print_char
+        INC HL
+        JR print_string
+
+print_char:
+        ; Implementation depends on target system
+        RET
+```
+
+### Memory Copy
+```asm
+; Copy memory block
+; HL = source, DE = destination, BC = length
+copy_memory:
+        LD A, B
+        OR C
+        RET Z           ; Return if length is 0
+        
+        LD A, (HL)      ; Get byte from source
+        LD (DE), A      ; Store to destination
+        INC HL          ; Next source
+        INC DE          ; Next destination
+        DEC BC          ; Decrease counter
+        JR copy_memory  ; Continue until done
+```
+
+## Next Steps
+
+- Learn about [Building and Running](/user-guide/build-run) your assembly programs
+- Explore [Debugging](/user-guide/debugging) techniques
+- Discover [Emulation](/user-guide/emulation) features

@@ -1,0 +1,8 @@
+{
+  "interface": "Interface Overview",
+  "projects": "Project Management",
+  "assembly": "Z80 Assembly",
+  "emulation": "Emulation",
+  "build-run": "Build & Run",
+  "debugging": "Debugging"
+}
