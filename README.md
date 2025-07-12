@@ -54,13 +54,13 @@ kliveide-docs/
 
 ## Deployment
 
-This documentation site is automatically deployed to GitHub Pages at [https://dotneteer.github.io/kliveide/](https://dotneteer.github.io/kliveide/) when changes are merged to the main branch.
+This documentation site is automatically deployed to GitHub Pages at [https://dotneteer.github.io/kliveide/](https://dotneteer.github.io/kliveide/) when changes are merged to the master branch.
 
 ### GitHub Pages Setup
 
 The site uses GitHub Actions for automatic deployment. The workflow:
 
-1. Triggers on pushes to the `main` branch
+1. Triggers on pushes to the `master` branch
 2. Builds the static site using `npm run export`
 3. Deploys to GitHub Pages
 

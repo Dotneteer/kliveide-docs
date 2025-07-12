@@ -1,6 +1,6 @@
 # GitHub Pages Setup Instructions
 
-This repository is configured to automatically deploy to GitHub Pages when changes are merged to the main branch.
+This repository is configured to automatically deploy to GitHub Pages when changes are merged to the master branch.
 
 ## Setup Steps
 
@@ -11,7 +11,7 @@ This repository is configured to automatically deploy to GitHub Pages when chang
 
 2. **Automatic Deployment:**
    - The GitHub Actions workflow (`.github/workflows/deploy.yml`) will automatically build and deploy your documentation
-   - Every push to the `main` branch triggers a new deployment
+   - Every push to the `master` branch triggers a new deployment
    - The site will be available at: https://dotneteer.github.io/kliveide/
 
 ## Manual Testing
