@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "export": "next build",
     "start": "next start",
     "lint": "next lint"
   },
@@ -14,6 +15,7 @@
     "nextra-theme-docs": "^2.13.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "sharp": "^0.34.3",
     "shiki": "^0.14.0"
   },
   "devDependencies": {

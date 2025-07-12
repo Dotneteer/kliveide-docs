@@ -260,6 +260,13 @@ module.exports = withNextra({
     // your project has ESLint errors.
     ignoreDuringBuilds: true,
   },
+  output: 'export',
+  trailingSlash: true,
+  images: {
+    unoptimized: true,
+  },
+  basePath: process.env.NODE_ENV === 'production' ? '/kliveide' : '',
+  assetPrefix: process.env.NODE_ENV === 'production' ? '/kliveide/' : '',
 })
 
 // If you have other Next.js configurations, you can pass them as the parameter:
