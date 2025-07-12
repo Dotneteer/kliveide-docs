@@ -54,12 +54,32 @@ kliveide-docs/
 
 ## Deployment
 
-This site can be deployed to:
-- [Vercel](https://vercel.com) (recommended)
+This documentation site is automatically deployed to GitHub Pages at [https://dotneteer.github.io/kliveide/](https://dotneteer.github.io/kliveide/) when changes are merged to the main branch.
+
+### GitHub Pages Setup
+
+The site uses GitHub Actions for automatic deployment. The workflow:
+
+1. Triggers on pushes to the `main` branch
+2. Builds the static site using `npm run export`
+3. Deploys to GitHub Pages
+
+### Manual Deployment
+
+To deploy manually:
+
+```bash
+npm run export
+```
+
+This creates a static build in the `out/` directory that can be deployed to any static hosting service.
+
+### Other Deployment Options
+
+This site can also be deployed to:
+- [Vercel](https://vercel.com) (recommended for development)
 - [Netlify](https://netlify.com)
 - Any static hosting service
-
-For Vercel deployment, simply connect your GitHub repository and it will automatically build and deploy on every commit.
 
 ## License
 
