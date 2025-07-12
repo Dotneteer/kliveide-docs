@@ -7,7 +7,7 @@ const customTheme = {
   dark: {
     colors: {
       'editor.background': '#1E1E1E',
-      'editor.foreground': '#D4D4D4',
+      'editor.foreground': '#a4a4a4',
     },
     settings: [
       {
@@ -19,7 +19,7 @@ const customTheme = {
       {
         scope: ['string'],
         settings: {
-          foreground: '#CE9178',
+          foreground: '#DC143C',
         },
       },
       {
@@ -56,7 +56,7 @@ const customTheme = {
       {
         scope: ['keyword.operator.z80-klive'],
         settings: {
-            foreground: '#D4D4D4'
+            foreground: '#a4a4a4'
         }
       },
       {
@@ -70,6 +70,44 @@ const customTheme = {
         settings: {
             foreground: '#c586c0',
             fontStyle: 'italic'
+        }
+      },
+      // JavaScript and general syntax highlighting
+      {
+        scope: ['keyword.control', 'keyword.operator', 'keyword.other', 'keyword.declaration', 'storage.type'],
+        settings: {
+          foreground: '#4A9EFF',
+          fontStyle: 'bold'
+        }
+      },
+      {
+        scope: ['variable.language', 'variable.other.constant'],
+        settings: {
+          foreground: '#4A9EFF'
+        }
+      },
+      {
+        scope: ['entity.name.function', 'support.function'],
+        settings: {
+          foreground: '#FF8C42'
+        }
+      },
+      {
+        scope: ['entity.name.type', 'entity.name.class'],
+        settings: {
+          foreground: '#4EC9B0'
+        }
+      },
+      {
+        scope: ['variable.parameter', 'variable.other.readwrite'],
+        settings: {
+          foreground: '#9CDCFE'
+        }
+      },
+      {
+        scope: ['punctuation.definition.template-expression'],
+        settings: {
+          foreground: '#4A9EFF'
         }
       }
     ],
@@ -89,7 +127,7 @@ const customTheme = {
           {
             scope: ['string'],
             settings: {
-              foreground: '#A31515',
+              foreground: '#8B0000',
             },
           },
           {
@@ -141,6 +179,44 @@ const customTheme = {
                 foreground: '#AF00DB',
                 fontStyle: 'italic'
             }
+          },
+          // JavaScript and general syntax highlighting
+          {
+            scope: ['keyword.control', 'keyword.operator', 'keyword.other', 'keyword.declaration', 'storage.type'],
+            settings: {
+              foreground: '#7C3AED',
+              fontStyle: 'bold'
+            }
+          },
+          {
+            scope: ['variable.language', 'variable.other.constant'],
+            settings: {
+              foreground: '#0066CC'
+            }
+          },
+          {
+            scope: ['entity.name.function', 'support.function'],
+            settings: {
+              foreground: '#D2691E'
+            }
+          },
+          {
+            scope: ['entity.name.type', 'entity.name.class'],
+            settings: {
+              foreground: '#267f99'
+            }
+          },
+          {
+            scope: ['variable.parameter', 'variable.other.readwrite'],
+            settings: {
+              foreground: '#001080'
+            }
+          },
+          {
+            scope: ['punctuation.definition.template-expression'],
+            settings: {
+              foreground: '#7C3AED'
+            }
           }
     ],
   },
@@ -158,6 +234,13 @@ const withNextra = require('nextra')({
         return require('shiki').getHighlighter({
           ...options,
           langs: [
+            'javascript',
+            'typescript',
+            'json',
+            'markdown',
+            'html',
+            'css',
+            'bash',
             {
               id: 'z80-klive',
               scopeName: 'source.z80-klive',

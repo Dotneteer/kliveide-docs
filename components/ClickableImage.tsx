@@ -27,8 +27,12 @@ export const ClickableImage: React.FC<ClickableImageProps> = ({
 
   // Custom styles for dynamic properties
   const customStyle: React.CSSProperties = {
-    ...(width && { width }),
-    ...(height ? { height } : { height: 'auto' }),
+    ...(width && { 
+      width: typeof width === 'string' && /^\d+$/.test(width) ? `${width}px` : width 
+    }),
+    ...(height ? { 
+      height: typeof height === 'string' && /^\d+$/.test(height) ? `${height}px` : height 
+    } : { height: 'auto' }),
     ...style
   }
 
